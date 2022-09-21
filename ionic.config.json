@@ -1,0 +1,7 @@
+{
+  "name": "DnD-Mobile-App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
