@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Base Stats
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,65 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title class="app-center-title" size="medium">Base Stats</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Adora
+      </ion-col>
+      <ion-col>
+        Ranger 6
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Hit Dice
+      </ion-col>
+      <ion-col>
+        Armor Class
+      </ion-col>
+      <ion-col>
+        Proficiency
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div style="width: 100%; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; background-color: grey; padding: 5px; border-radius: 5px; border: forestgreen solid 2px;">
+    <div style="width: 48%; margin-top: 5px; display: flex; flex-direction: column; background-color: #2a2a2a; border-radius: 5px; border: #1e1e1e solid 2px;" *ngFor="let abilityScore of abilityScores">
+      <div style="text-align: center;">
+        {{ abilityScore.name }}
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+        <div style="display: flex; flex-direction: column; text-align: center;">
+          <span style="font-size: 0.8em; font-style: italic;">Score</span>
+          <span>{{ abilityScore.score }}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; text-align: center;">
+          <span style="font-size: 0.8em; font-style: italic;">Modifier</span>
+          <span>{{ abilityScore.modifier }}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; text-align: center;">
+          <span style="font-size: 0.8em; font-style: italic;">Save</span>
+          <span>{{ abilityScore.save }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+<!--  <app-explore-container name="Hello"></app-explore-container>-->
 </ion-content>
