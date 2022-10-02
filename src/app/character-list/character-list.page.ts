@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CharacterService} from '../character/service/character.service';
+import {Character} from '../character/model/character.model';
 
 @Component({
   selector: 'app-character-list',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterListPage implements OnInit {
 
-  constructor() { }
+  characters: Character[] = [];
+
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
-    console.log('Initializing...');
+    this.characters = this.characterService.getCharacters();
   }
 
+  newCharacterClick() {
+    console.log('Preparing new character window...');
+  }
 }

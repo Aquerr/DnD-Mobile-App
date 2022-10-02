@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./character-list/character-list.module').then( m => m.CharacterListPageModule)
   },
   {
-    path: 'character',
+    path: 'character/:id',
     loadChildren: () => import('./character/character.module').then( m => m.CharacterPageModule)
   },
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, paramsInheritanceStrategy: 'always' })
   ],
   exports: [RouterModule]
 })

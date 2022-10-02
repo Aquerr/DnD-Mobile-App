@@ -9,8 +9,6 @@ export class CharacterPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log('Initializing...');
-  }
+  ngOnInit() {}
 
 }

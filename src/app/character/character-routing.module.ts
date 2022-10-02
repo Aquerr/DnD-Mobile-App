@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { CharacterPage } from './character.page';
+import {CharacterPage} from './character.page';
 
 const routes: Routes = [
   {
@@ -18,10 +17,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/character/base-stats',
+        redirectTo: 'base-stats',
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: 'base-stats',
+    pathMatch: 'full'
   }
 ];
 

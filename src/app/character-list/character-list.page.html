@@ -1,12 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>character-list</ion-title>
+    <ion-title>Character List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  Lista postaci
 
-  <ion-button [routerLink]="['/character']">Go to Character</ion-button>
+  <ion-card *ngFor="let character of characters" [routerLink]="['/character', character.id]" class="no-ripple">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img alt="No Image" [src]="'data:image/jpeg;base64,' + character.avatarBase64">
+      </ion-avatar>
+      <ion-label>{{character.name}}</ion-label>
+    </ion-item>
+    <ion-card-content>Test opis</ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none" (click)="newCharacterClick()">
+      <ion-icon name="add-outline"></ion-icon>
+      <ion-card-content>Add new character</ion-card-content>
+    </ion-item>
+  </ion-card>
 
 </ion-content>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Character} from '../model/character.model';
 
 @Component({
   selector: 'app-character-base-stats',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterBaseStatsPage implements OnInit {
 
-  constructor() { }
+  character: Character;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log('Initializing...');
+    this.activatedRoute.data.subscribe(({character}) => {
+      this.character = character;
+    });
   }
-
 }
